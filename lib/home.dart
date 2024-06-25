@@ -62,12 +62,18 @@ class Home extends StatelessWidget {
                 SizedBox(
                   height: 30.0,
                 ),
-                Text(
-                  'YEAR',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    letterSpacing: 2.0,
-                  ),
+                Row(
+                  children: [
+                    Icon(Icons.calendar_month,
+                    color: Colors.pinkAccent),
+                    Text(
+                      'YEAR',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        letterSpacing: 2.0,
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   '4th',
@@ -79,12 +85,18 @@ class Home extends StatelessWidget {
                 SizedBox(
                   height: 30.0,
                 ),
-                Text(
-                  'EMAIL',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    letterSpacing: 2.0,
-                  ),
+                Row(
+                  children: [
+                    Icon(Icons.email,
+                        color: Colors.pinkAccent),
+                    Text(
+                      'EMAIL',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        letterSpacing: 2.0,
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   'erillajenny16@gmail.com',
