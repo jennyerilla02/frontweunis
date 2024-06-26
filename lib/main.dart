@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:unis/home.dart';
+import 'package:unis/pages/dashboard.dart';
+import 'package:unis/pages/menu.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: Home(),
+
+void main() => runApp(MaterialApp(
+    routes:{
+      '/' : (context) => Dashboard(),
+      '/menu' : (context) => Menu(),
+      '/home' : (context) => Home(),
+    }
   ));
-}
 
-class home extends StatelessWidget {
-  const home({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
