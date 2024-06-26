@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int year = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +35,7 @@ class Home extends StatelessWidget {
                           width: 500.0,
                         ),
                       ),
-                      radius: 75.0),
+                          radius: 75.0),
                 ),
                 Divider(
                   height: 55.0,
@@ -76,7 +83,7 @@ class Home extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  '4th',
+                  '$year Year',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25.0,
@@ -111,8 +118,17 @@ class Home extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Add Year'),
+                  onPressed: () {
+                    setState(() {
+                      year += 1;
+                    });
+                  },
+                  child: Text('Add Year',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  ),
                   style: ButtonStyle(
                       backgroundColor:
                           WidgetStateProperty.all(Colors.pinkAccent)),
