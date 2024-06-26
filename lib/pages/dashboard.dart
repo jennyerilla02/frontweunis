@@ -24,9 +24,9 @@ class _DashboardState extends State<Dashboard> {
               ),
              ElevatedButton(
                onPressed: (){
-                 Navigator.pushNamed(context,'/profile');
+                 Navigator.pushNamed(context,'/home');
           },
-               child: Text('Go to Profile'),
+               child: Text('Go to Home'),
              ),
             ],
           ),
