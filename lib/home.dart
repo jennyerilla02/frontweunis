@@ -14,7 +14,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Profile'),
+        title: Text('User Profile',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),),
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
       ),
