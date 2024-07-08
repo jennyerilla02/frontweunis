@@ -17,7 +17,7 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding (
-          padding: EdgeInsets.fromLTRB(40.0, 200.0, 40.0, 0),
+          padding: EdgeInsets.fromLTRB(40.0, 50.0, 40.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
@@ -25,7 +25,8 @@ class _LoginState extends State<Login> {
                 'Welcome Back!',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 24.0,
+                  letterSpacing: 2.0,
+                  fontSize: 25.0,
                 ),
               ),
               SizedBox(height: 30.0,),
@@ -91,7 +92,7 @@ class _LoginState extends State<Login> {
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.pink,
-                        foregroundColor: Colors.white,
+                        foregroundColor: Colors.black,
                       ),
                     ),
                     SizedBox(height: 10.0,),

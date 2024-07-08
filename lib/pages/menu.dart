@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:unis/pages/selectedProduct.dart';
 import 'package:unis/services/product.dart';
 import 'package:flutter/material.dart';
 import 'package:unis/services/menuCard.dart';
@@ -37,10 +38,10 @@ class _MenuState extends State<Menu> {
       backgroundColor: Colors.pink[50],
       appBar: AppBar(
         backgroundColor: Colors.pink,
-        foregroundColor: Colors.white,
+        foregroundColor: Colors.black,
         title: Text("Menu",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -67,6 +68,7 @@ class _MenuState extends State<Menu> {
                     itemCount: products.length,
                     itemBuilder: (context, index){
                       return Card(
+                        color:  Colors.pinkAccent[100],
                         child: ListTile(
                           title: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +86,15 @@ class _MenuState extends State<Menu> {
                               )
                             ],
                           ),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        Selectedproduct(product:products[index]),
+                                )
+                            );
+                          },
                         ),
                       );
                     }

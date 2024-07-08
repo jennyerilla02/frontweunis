@@ -16,10 +16,10 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pinkAccent[60],
+      backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
+          padding: EdgeInsets.fromLTRB(40.0, 50.0, 40.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -42,6 +42,8 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       maxLength: 40,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Name'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)),
@@ -65,6 +67,8 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Email'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)),
@@ -85,6 +89,8 @@ class _SignupState extends State<Signup> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
                         label: Text('Password'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)),

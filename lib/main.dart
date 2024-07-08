@@ -13,7 +13,7 @@ void main() => runApp(MaterialApp(
       '/menu' : (context) => Menu(),
       '/home' : (context) => Home(),
       '/signup' : (context) => Signup(),
-      '/login' : (context) => Login()
+      '/login' : (context) => Login(),
 
     }
   ));

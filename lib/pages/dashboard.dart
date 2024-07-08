@@ -16,7 +16,7 @@ class _DashboardState extends State<Dashboard> {
         foregroundColor: Colors.black,
         title: Text("Dashboard",
         style: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
         ),
@@ -34,7 +34,7 @@ class _DashboardState extends State<Dashboard> {
               Navigator.pushNamed(context, '/menu');
               break;
             case 2:
-              Navigator.pushNamed(context, '/profile');
+              Navigator.pushNamed(context, '/home');
           }
         },
         currentIndex: 0,
