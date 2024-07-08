@@ -6,10 +6,22 @@ class Selectedproduct extends StatefulWidget {
   const Selectedproduct({super.key,required this.product});
 
   @override
-  State<Selectedproduct> createState() => _SelectedproductState();
+  State<Selectedproduct> createState() =>
+      _SelectedproductState(product: product);
 }
 
 class _SelectedproductState extends State<Selectedproduct> {
+  final Product product;
+  late double totalAmount = product.price;
+  int numberOfOrders = 1;
+  _SelectedproductState({required this.product});
+
+  @override
+  void initState() {
+    super.initState();
+    totalAmount = product.price;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,19 +46,46 @@ class _SelectedproductState extends State<Selectedproduct> {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(widget.product.price.toString()),
+              Text(
+                  '₱ ${totalAmount.toString()}',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+              ),
+             Row(
+               children: [
+                 IconButton(onPressed: (){
+                   setState(() {
+                     if(numberOfOrders> 1){
+                       numberOfOrders -= 1;
+                       totalAmount= product.price * numberOfOrders;
+                     }
+                   });
+                 },
+                     icon: Icon(Icons.remove)
+                 ),
+                 Text(
+                   numberOfOrders.toString(),
+                   style: TextStyle(
+                     fontSize: 20.0,
+                   ),
+                 ),
+                 IconButton(onPressed: (){
+                   setState(() {
+                     numberOfOrders+= 1;
+                     totalAmount= product.price * numberOfOrders;
+                   });
+                 },
+                     icon: Icon(Icons.add)
+                 ),
+               ],
+             ),
             ],
           ),
-          Row(
-            children: [
-              IconButton(onPressed: (){},
-                  icon: )
             ],
-          )
-        ],
-      ),
-    );
+          ),
+      );
   }
 }
-
