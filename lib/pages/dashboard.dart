@@ -53,7 +53,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person,
-                color: Colors.black,),
+                color: Colors.black),
             label: 'Profile',
           ),
         ],

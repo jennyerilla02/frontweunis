@@ -64,7 +64,10 @@ class _SelectedproductState extends State<Selectedproduct> {
                      }
                    });
                  },
-                     icon: Icon(Icons.remove)
+                     icon: Icon(Icons.remove),
+                   style: const ButtonStyle(
+                     backgroundColor: WidgetStatePropertyAll(Colors.pinkAccent)
+                   ),
                  ),
                  Text(
                    numberOfOrders.toString(),
@@ -78,7 +81,10 @@ class _SelectedproductState extends State<Selectedproduct> {
                      totalAmount= product.price * numberOfOrders;
                    });
                  },
-                     icon: Icon(Icons.add)
+                     icon: Icon(Icons.add),
+                   style: const ButtonStyle(
+                     backgroundColor: WidgetStatePropertyAll(Colors.pinkAccent)
+                   ),
                  ),
                ],
              ),
