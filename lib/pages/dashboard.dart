@@ -34,7 +34,7 @@ class _DashboardState extends State<Dashboard> {
               Navigator.pushNamed(context, '/menu');
               break;
             case 2:
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/profile');
           }
         },
         currentIndex: 0,
