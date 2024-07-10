@@ -6,6 +6,7 @@ import 'package:unis/services/user.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
+
   @override
   State<Login> createState() => _LoginState();
 }
@@ -24,7 +25,7 @@ class _LoginState extends State<Login> {
     final response = await http.post(
       Uri.parse('http://10.0.2.2:8080/api/v1/auth/login'),
       headers: <String, String>{
-        'Content-Type' : 'application/json;charset=UTF-8'
+        'Content-Type' : 'application/json; charset=UTF-8'
       },
       body: jsonEncode(<String,dynamic>{
         'usernameOrEmail': user.email,
@@ -35,8 +36,9 @@ class _LoginState extends State<Login> {
       return true;
     }
     return false;
-    print(response.body);
+   // print(response.body);
   }
+
 
 
   @override
@@ -131,7 +133,7 @@ class _LoginState extends State<Login> {
                           User user = User(
                             username: '',
                             email: email,
-                            password: password
+                            password: password,
                           );
                           // if login(user){
                           //   Navigator.pushReplacementNamed(context, '/');
