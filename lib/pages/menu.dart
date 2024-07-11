@@ -86,12 +86,13 @@ class _MenuState extends State<Menu> {
                               )
                             ],
                           ),
+                          leading: CircleAvatar(backgroundImage: NetworkImage(products[index].url),),
                           onTap: (){
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        Selectedproduct(product:products[index]),
+                                        SelectedProduct(product:products[index]),
                                 )
                             );
                           },

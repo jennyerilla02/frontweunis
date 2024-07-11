@@ -19,7 +19,16 @@ class _HomeState extends State<Home> {
           fontWeight: FontWeight.bold,
         ),),
         backgroundColor: Colors.pinkAccent,
+        foregroundColor: Colors.black,
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, '/login');
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: EdgeInsets.all(20.0),

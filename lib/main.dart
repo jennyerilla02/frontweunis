@@ -6,7 +6,7 @@ import 'package:unis/pages/signup.dart';
 import 'package:unis/pages/login.dart';
 
 void main() => runApp(MaterialApp(
-  initialRoute: '/login',
+  initialRoute: '/',
   routes: {
     '/' : (context) => Dashboard(),
     '/menu' : (context) => Menu(),

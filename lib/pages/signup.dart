@@ -45,8 +45,17 @@ class _SignupState extends State<Signup> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2.0,
-                  fontSize: 25.5,
+                  fontSize: 30.5,
                 ),
+              ),
+              Center(
+                child: CircleAvatar(
+                    child: Image.asset(
+                      'assets/logo1.png',
+                      width: 500.0,
+                    ),
+                    backgroundColor: Colors.pink[50],
+                    radius: 100.0),
               ),
               SizedBox(
                 height: 30.0,
@@ -62,6 +71,7 @@ class _SignupState extends State<Signup> {
                         fillColor: Colors.white,
                         filled: true,
                         labelText: 'Name',
+                        prefixIcon: Icon(Icons.person),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
@@ -88,6 +98,7 @@ class _SignupState extends State<Signup> {
                         fillColor: Colors.white,
                         filled: true,
                         labelText: 'Email',
+                        prefixIcon: Icon(Icons.email),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20.0),
                         ),
@@ -111,6 +122,7 @@ class _SignupState extends State<Signup> {
                         fillColor: Colors.white,
                         filled: true,
                         labelText: 'Password',
+                        prefixIcon: Icon(Icons.lock),
                         suffixIcon: IconButton(
                         icon: Icon(_obscureIcon),
                         onPressed: (){
@@ -166,7 +178,7 @@ class _SignupState extends State<Signup> {
                       child: Text('Sign Up'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.pinkAccent[400],
-                        foregroundColor: Colors.white,
+                        foregroundColor: Colors.black,
                       ),
                     ),
                     SizedBox(

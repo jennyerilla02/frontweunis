@@ -17,26 +17,26 @@ class _LoginState extends State<Login> {
   bool _obscure = true;
   IconData _obscureIcon = Icons.visibility_off;
 
-  Widget buttonContent =  Text('Log in');
+  Widget buttonContent = Text('Log in');
 
   Widget loadingDisplay = CircularProgressIndicator();
 
-  Future<bool>login(User user)async{
+  Future<bool> login(User user)async{
     final response = await http.post(
-      Uri.parse('http://10.0.2.2:8080/api/v1/auth/login'),
-      headers: <String, String>{
-        'Content-Type' : 'application/json; charset=UTF-8'
-      },
-      body: jsonEncode(<String,dynamic>{
-        'usernameOrEmail': user.email,
-        'password' : user.password
-      }),
+        Uri.parse('http://10.0.2.2:8080/api/v1/auth/login'),
+        headers: <String, String>{
+          'Content-Type' : 'application/json; charset=UTF-8'
+        },
+        body: jsonEncode(<String, dynamic>{
+          'usernameOrEmail' : user.email,
+          'password' : user.password
+        })
     );
-    if (response.statusCode == 200){
+    if(response.statusCode == 200){
       return true;
     }
     return false;
-   // print(response.body);
+    //print(response.body);
   }
 
 
@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
       backgroundColor: Colors.pink[50],
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(30.0, 60.0, 30.0, 0),
+          padding: EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -56,8 +56,17 @@ class _LoginState extends State<Login> {
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2.0,
-                  fontSize: 25.5,
+                  fontSize: 30.5,
                 ),
+              ),
+              Center(
+                child: CircleAvatar(
+                      child: Image.asset(
+                        'assets/logo1.png',
+                        width: 500.0,
+                      ),
+                    backgroundColor: Colors.pink[50],
+                    radius: 100.0),
               ),
               SizedBox(height: 10.0,),
               Form(
@@ -71,6 +80,7 @@ class _LoginState extends State<Login> {
                         fillColor: Colors.white,
                         filled: true,
                         label: Text('Email'),
+                        prefixIcon: Icon(Icons.email),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)
                         ),
@@ -92,6 +102,7 @@ class _LoginState extends State<Login> {
                         fillColor: Colors.white,
                         filled: true,
                         label: Text('Password'),
+                        prefixIcon: Icon(Icons.lock),
                         suffixIcon: IconButton(
                           icon: Icon(Icons.visibility_off_outlined),
                           onPressed: (){
@@ -135,30 +146,30 @@ class _LoginState extends State<Login> {
                             email: email,
                             password: password,
                           );
-                          // if login(user){
-                          //   Navigator.pushReplacementNamed(context, '/');
-                          // }
+                          /*if(login(user)){
+                   Navigator.pushReplacementNamed(context, '/dashboard');
+                 }*/
                           setState(() {
                             buttonContent = FutureBuilder(
-                              future: login(user),
-                              builder: (context, snapshots){
-                                if(snapshots.connectionState == ConnectionState.waiting){
-                                  return loadingDisplay;
-                                }
-                                if(snapshots.hasData){
+                                future: login(user),
+                                builder: (context, snapshots){
+                                  if(snapshots.connectionState == ConnectionState.waiting){
+                                    return loadingDisplay;
+                                  }
+                                  if(snapshots.hasData){
 
+                                  }
+                                  return Text('Log In');
                                 }
-                                return Text('Log in');
-                              }
                             );
                           });
                           Navigator.pushReplacementNamed(context, '/');
                         }
                       },
-                      child: Text('Log In'),
+                      child: buttonContent,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.pinkAccent[400],
-                        foregroundColor: Colors.white,
+                        foregroundColor: Colors.black,
                       ),
                     ),
                     SizedBox(height: 30.0,),
@@ -169,6 +180,7 @@ class _LoginState extends State<Login> {
                           'Don`t have an account?',
                           style: TextStyle(
                             color: Colors.black,
+                            fontSize: 14.5,
                           ),
                         ),
                         SizedBox(width: 5.0,),
@@ -177,6 +189,7 @@ class _LoginState extends State<Login> {
                             'Sign Up',
                             style: TextStyle(
                               color: Colors.blue[400],
+                              fontSize: 14.5,
                             ),
                           ),
                           onTap: ()=> Navigator.popAndPushNamed(context, '/signup'),
